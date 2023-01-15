@@ -6,12 +6,49 @@ const PREFIX = '!';
 
 const COMMANDS = new Map([
     ['help', 'display this message'],
-    ['greet', 'generate a random greeting'],
-    ['8ball', 'generate a random fortune']
+    ['greet', 'generate random greeting'],
+    ['8ball', 'generate random fortune for a yes/no question'],
+    ['shower-thought', 'generate random statement proving life is a lie']
 ]);
-
-const GREETINGS = ["hi!", "hello!", "how are you?", "hey!", "what's up?", "howdy!", "what's crackin'?", "g'day mate!"];
-const FORTUNES = ["yes", "no", "maybe", "possibly", "most likely", "very doubtful", "signs point to yes", "outlook not good", "cannot tell now", "try again"];
+const GREETINGS = [
+    'hi!',
+    'hello!',
+    'how are you?',
+    'hey!',
+    'what\'s up?',
+    'howdy!',
+    'what\'s crackin\'?',
+    'g\'day mate!'
+];
+const FORTUNES = [
+    'yes',
+    'no',
+    'maybe',
+    'possibly',
+    'most likely',
+    'very doubtful',
+    'signs point to yes',
+    'outlook not good',
+    'cannot tell now',
+    'try again'
+];
+const SHOWER_THOUGHTS = [
+    'the word "nun" is the letter n doing a cartwheel',
+    'theater ppl say break a leg bc they want u in a cast',
+    'ppl say be there or be square bc ur not a-round',
+    'when you say the words "touch" and "separate," ur lips do the opposite',
+    'erasers are also called rubbers bc they rub out ur mistakes',
+    '"why did the chicken cross the road" is a suicide joke',
+    'ptsd is just spicy nostalgia',
+    'waffles are just pancakes with abs',
+    'the division sign is just a blank fraction',
+    'lasagna is just spaghetti flavored cake',
+    'milk is just cereal sauce',
+    'ur not afraid of being alone in the dark, ur afraid of being not alone in the dark',
+    'saying ur up for smth and ur down for smth mean the same thing',
+    'cargo goes on ships, and shipments go on cars',
+    'a larger bed means more bed room but less bedroom'
+];
 
 BOT.login(TOKEN);
 
@@ -28,19 +65,19 @@ BOT.on('message', (message) => {
     // display list of commands
     if (command == 'help') {
         let menu = '';
-        for (let[key, value] of COMMANDS.entries()) {
-            menu += '**' + key + '**\n*' + value + '*\n'; 
-        }
+        for (let[key, value] of COMMANDS.entries())
+            menu += '**' + PREFIX + key + '**\n*' + value + '*\n';
         message.channel.send(menu);
     }
-    // display random greeting
-    else if (command == 'greet') {
-        let randomNum = Math.floor(Math.random()*GREETINGS.length);
-        message.channel.send(GREETINGS[randomNum]);
-    }
-    // display random fortune
-    else if (command == '8ball') {
-        let randomNum = Math.floor(Math.random()*FORTUNES.length);
-        message.channel.send(FORTUNES[randomNum]);
-    }
+    // generate something random
+    else if (command == 'greet')
+        message.channel.send(sendRandom(GREETINGS));
+    else if (command == '8ball')
+        message.channel.send(sendRandom(FORTUNES));
+    else if (command == 'shower-thought')
+        message.channel.send(sendRandom(SHOWER_THOUGHTS));
 });
+
+let sendRandom = (list) => {
+    return list[Math.floor(Math.random()*list.length)];
+}
