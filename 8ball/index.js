@@ -47,7 +47,14 @@ const SHOWER_THOUGHTS = [
     'ur not afraid of being alone in the dark, ur afraid of being not alone in the dark',
     'saying ur up for smth and ur down for smth mean the same thing',
     'cargo goes on ships, and shipments go on cars',
-    'a larger bed means more bed room but less bedroom'
+    'a larger bed means more bed room but less bedroom',
+    'bacon is cooked and cookies are baked',
+    'when u clean a vacuum cleaner, u become the vacuum cleaner',
+    'when u wait for the waiter, u become the waiter',
+    'when u sweat in a sweater, u become the sweater',
+    'if 2 vegans fight, is it still beef?',
+    'if ur a security guard at samsung, then r u guardian of the galaxy?',
+    'why aren’t iphone chargers called apple juice?'
 ];
 
 BOT.login(TOKEN);
