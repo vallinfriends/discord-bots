@@ -54,7 +54,10 @@ const SHOWER_THOUGHTS = [
     'when u sweat in a sweater, u become the sweater',
     'if 2 vegans fight, is it still beef?',
     'if ur a security guard at samsung, then r u guardian of the galaxy?',
-    'why aren’t iphone chargers called apple juice?'
+    'why aren’t iphone chargers called apple juice?',
+    'why do we call them paintings and not painteds when they’re already done?',
+    'u can never buy hotpockets, only cold pockets - u have to supply the heat urself',
+    'ur alarm sound is basically ur theme song, bc it starts every episode of ur life'
 ];
 
 BOT.login(TOKEN);
