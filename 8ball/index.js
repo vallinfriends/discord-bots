@@ -45,6 +45,7 @@ const SHOWER_THOUGHTS = [
     'lasagna is just spaghetti flavored cake',
     'milk is just cereal sauce',
     'ur not afraid of being alone in the dark, ur afraid of being not alone in the dark',
+    'u don\'t need a parachute to go skydiving, u only need one to go skydiving twice',
     'saying ur up for smth and ur down for smth mean the same thing',
     'cargo goes on ships, and shipments go on cars',
     'a larger bed means more bed room but less bedroom',
